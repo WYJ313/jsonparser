@@ -309,54 +309,90 @@ class JsonParser:
 
     def dump_file(self, f):
         try:
-            output = open(f, 'w')
-            output.write(self.dump())
-            output.close()
-        except JsonFileLoadException as e:
+            try:
+                output = open(f, 'w')
+                output.write(self.dump())
+                output.close()
+            except IOError:
+                raise JsonFileDumpException
+        except JsonFileDumpException as e:
             logging.exception(e.info())
 
     def _deepcopy_list(self, List):
-        res = []
-        for i in List:
-            if type(i) == str:
-                res.append(i)
-            elif type(i) == list:
-                res.append(self._deepcopy_list(i))
-            elif type(i) == dict:
-                res.append(self._deepcopy_dict(i))
-            elif i is True or i is False or i is None:
-                res.append(i)
-            elif isinstance(i, float) or isinstance(i, int):
-                res.append(i)
-        return res
+        if type(List) == list:
+            res = []
+            for i in List:
+                if type(i) == str:
+                    res.append(i)
+                elif type(i) == list:
+                    res.append(self._deepcopy_list(i))
+                elif type(i) == dict:
+                    res.append(self._deepcopy_dict(i))
+                elif i is True or i is False or i is None:
+                    res.append(i)
+                elif isinstance(i, float) or isinstance(i, int):
+                    res.append(i)
+                else:
+                    ValueError('无法识别的对象类型')
+            return res
+        else:
+            raise ValueError("参数错误：请传入list对象")
 
     def _deepcopy_dict(self, d):
-        res = {}
-        for key in d.keys():
-            if type(key) == str:
-                if type(d[key]) == str:
-                    res[key] = d[key]
-                elif type(d[key]) == list:
-                    res[key] = self._deepcopy_list(d[key])
-                elif type(d[key]) == dict:
-                    res[key] = self._deepcopy_dict(d[key])
-                elif d[key] is True or d[key] is False or d[key] is None:
-                    res[key] = d[key]
-                elif isinstance(d[key], float) or isinstance(d[key], int):
-                    res[key] = d[key]
-        return res
+        if type(d) == dict:
+            res = {}
+            for key in d.keys():
+                if type(key) == str:
+                    if type(d[key]) == str:
+                        res[key] = d[key]
+                    elif type(d[key]) == list:
+                        res[key] = self._deepcopy_list(d[key])
+                    elif type(d[key]) == dict:
+                        res[key] = self._deepcopy_dict(d[key])
+                    elif d[key] is True or d[key] is False or d[key] is None:
+                        res[key] = d[key]
+                    elif isinstance(d[key], float) or isinstance(d[key], int):
+                        res[key] = d[key]
+                    else:
+                        raise ValueError('无法识别的对象类型')
+            return res
+        else:
+            raise ValueError("参数错误：请传入dict对象")
 
     def load_dict(self, d):
-        self._data = self._deepcopy_dict(d)
+        try:
+            self._data = self._deepcopy_dict(d)
+        except ValueError as e:
+            logging.error(e)
 
     def dump_dict(self):
-        return self._deepcopy_dict(self._data)
+        try:
+            return self._deepcopy_dict(self._data)
+        except ValueError as e:
+            logging.error(e.message)
 
     def __getitem__(self, item):
-        return self._data[item]
+        try:
+            try:
+                return self._data[item]
+            except KeyError:
+                raise KeyError('当前Json对象不存在名为"'+item+'"的键')
+        except KeyError as e:
+            logging.error(e.message)
 
     def __setitem__(self, key, value):
-        self._data[key] = value
+        try:
+            if type(key) == str:
+                v = self._data[key]
+                if type(v) == list or type(v) == dict or v is True or v is False or v is None \
+                        or type(v) == int or type(v) == float:
+                    self._data[key] = value
+                else:
+                    raise ValueError('设置Json对象的值类型无法识别')
+            else:
+                raise KeyError('设置Json对象的键必须为字符串')
+        except (KeyError, ValueError) as e:
+            logging.error(e.message)
 
     def update(self, d):
         for key in d.keys():
@@ -416,4 +452,8 @@ if __name__ == '__main__':
     testI = '{"a": 12.34, "b": [-250, 250]}'
     js.load(testI)
     print(js._data)
+    #testL = [[1, 2], [3, 4]]
+    #js.load_dict(testL)
+    print(js['c'])
+
 
