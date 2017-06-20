@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jsonparser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jsonparser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsonparser/jsonparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="-713">
+              <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
                 <element signature="e#46#226#0" expanded="true" />
               </folding>
@@ -27,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jsontest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jsontest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jsonparser/jsontest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+            <state relative-caret-position="427">
+              <caret line="217" column="30" lean-forward="true" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
               <folding>
                 <element signature="e#47#62#0" expanded="true" />
               </folding>
@@ -118,7 +118,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RunManager" selected="Python tests.Unittest TestJsonParser.test_key_invalid_getitem">
-    <configuration default="false" name="Unittest TestJsonParser.test_IOError" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestJsonParser.test_IOError_load_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -130,7 +130,7 @@
       <module name="jsonparser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       <option name="CLASS_NAME" value="TestJsonParser" />
-      <option name="METHOD_NAME" value="test_IOError" />
+      <option name="METHOD_NAME" value="test_IOError_load_file" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -376,7 +376,7 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_load_file" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_dump_file" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_parameter_type" />
       <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_type_setitem" />
@@ -388,7 +388,7 @@
         <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_type_setitem" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_parameter_type" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_dump_file" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_load_file" />
       </list>
     </recent_temporary>
   </component>
@@ -396,34 +396,34 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 15h 46m 44s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 17h 09m 44s.xml">
       <configuration name="Unittest TestJsonParser.test_IOError_dump_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 15h 47m 18s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 17h 09m 47s.xml">
       <configuration name="Unittest TestJsonParser.test_IOError_dump_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_invalid_getitem - 2017.06.20 at 16h 17m 45s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_IOError_load_file - 2017.06.20 at 17h 09m 39s.xml">
+      <configuration name="Unittest TestJsonParser.test_IOError_load_file" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestJsonParser_test_json_number_format_exception - 2017.06.20 at 17h 09m 36s.xml">
+      <configuration name="Unittest TestJsonParser.test_json_number_format_exception" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestJsonParser_test_key_invalid_getitem - 2017.06.20 at 17h 10m 08s.xml">
       <configuration name="Unittest TestJsonParser.test_key_invalid_getitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 08m 23s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_key_invalid_getitem - 2017.06.20 at 17h 24m 12s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_invalid_getitem" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestJsonParser_test_key_invalid_getitem - 2017.06.20 at 17h 24m 21s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_invalid_getitem" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 17h 09m 59s.xml">
       <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 09m 49s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 17h 10m 02s.xml">
       <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 10m 37s.xml">
-      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 10m 47s.xml">
-      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 11m 38s.xml">
-      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 12m 28s.xml">
-      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_parameter_type - 2017.06.20 at 15h 59m 58s.xml">
+    <history-entry file="Unittest_TestJsonParser_test_parameter_type - 2017.06.20 at 17h 09m 52s.xml">
       <configuration name="Unittest TestJsonParser.test_parameter_type" configurationId="tests" />
     </history-entry>
   </component>
@@ -434,7 +434,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34343433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34343433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -483,18 +483,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsonparser/testin">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jsonparser/jsonexcept.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonparser/testin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -507,22 +507,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsonparser/jsontest.py">
+    <entry file="file://$PROJECT_DIR$/jsonparser/jsonparser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+        <state relative-caret-position="-713">
+          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding>
-            <element signature="e#47#62#0" expanded="true" />
+            <element signature="e#46#226#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jsonparser/jsonparser.py">
+    <entry file="file://$PROJECT_DIR$/jsonparser/jsontest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="427">
+          <caret line="217" column="30" lean-forward="true" selection-start-line="217" selection-start-column="30" selection-end-line="217" selection-end-column="30" />
           <folding>
-            <element signature="e#46#226#0" expanded="true" />
+            <element signature="e#47#62#0" expanded="true" />
           </folding>
         </state>
       </provider>

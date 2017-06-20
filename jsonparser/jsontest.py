@@ -107,7 +107,9 @@ class TestJsonParser(unittest.TestCase):
         try:
             js.load(test)
         except JsonFormatException as e:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_json_string_format_exception(self):
         test = '{"as": "hello" bs": ["problem", none, false], "cs": {"ds": true}}'
@@ -115,7 +117,9 @@ class TestJsonParser(unittest.TestCase):
         try:
             js.load(test)
         except JsonStringFormatException:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_json_list_format_exception(self):
         test = '{"as": "hello", "bs":["problem", none, false, "cs": {"ds": true}}'
@@ -123,7 +127,9 @@ class TestJsonParser(unittest.TestCase):
         try:
             js.load(test)
         except JsonListFormatException:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_json_dict_format_exception(self):
         test = '{"as": "hello", "bs": ["problem", none, false], "cs": {"ds": true}'
@@ -131,7 +137,9 @@ class TestJsonParser(unittest.TestCase):
         try:
             js.load(test)
         except JsonDictFormatException:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_json_constant_exception(self):
         test = '{"as": "hello", "bs": ["problem", none, faLse], "cs": {"ds": true}}'
@@ -139,7 +147,9 @@ class TestJsonParser(unittest.TestCase):
         try:
             js.load(test)
         except JsonConstantFormatException:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_json_number_format_exception(self):
         test = '{"as": "hello", "bs": [123.4.5, none, false], "cs": {"ds": true}}'
@@ -148,7 +158,9 @@ class TestJsonParser(unittest.TestCase):
             js.load(test)
             print(js._data)
         except JsonNumberFormatException:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_IOError_load_file(self):
         try:
@@ -156,7 +168,9 @@ class TestJsonParser(unittest.TestCase):
             input = './testint'
             js.load_file(input)
         except IOError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_IOError_dump_file(self):
         try:
@@ -166,7 +180,9 @@ class TestJsonParser(unittest.TestCase):
             js.load_file(input)
             js.dump_file(output)
         except IOError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_parameter_type(self):
         try:
@@ -174,28 +190,36 @@ class TestJsonParser(unittest.TestCase):
             s = '["as", "hello", "bs", [123.4.5, none, false], "cs", {"ds": true}]'
             js.load_dict(s)
         except ValueError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_key_type_setitem(self):
         try:
             js = JsonParser()
             js[123] = 'world'
         except KeyError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_key_type_setitem(self):
         try:
             js = JsonParser()
             js['hello'] = JsonParser()
         except ValueError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
     def test_key_invalid_getitem(self):
         try:
             js = JsonParser()
             print(js['hello'])
         except KeyError:
-            pass
+            self.assertTrue(True)
+        else:
+            self.assertTrue(False)
 
 
 

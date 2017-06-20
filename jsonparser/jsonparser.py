@@ -10,25 +10,41 @@ class JsonParser:
     def __init__(self):
         self._data = {}
 
-    def _parse_string(self, s):  # 传入"..."字符串
-        s = s.strip().strip(',').strip()
+    # 去除各个元素之间的转义符，逗号和空格
+    def _strip_json(self, s):
+        while True:
+            tmp = s.strip().strip(',').strip('\\').strip('/').strip('\b').strip('\f') \
+                .strip('\n').strip('\r').strip('\t').strip('\u')
+            if tmp == s:
+                return tmp
+            else:
+                s = tmp
+
+    # 传入"..."格式的字符串
+    def _parse_string(self, s):
+        s = self._strip_json(s)
         if s[0] == '\"' and s[-1] == '\"':
             return s.strip('\"')
         else:
             raise JsonStringFormatException(s)
 
+    # 传入xx, -xx, xx.xx格式的字符串
     def _parse_number(self, s):
-        s = s.strip().strip(',').strip()
+        s = self._strip_json(s)
         if ((s[0] >= '0' and s[0] <= '9') or s[0] == '-') and (s[-1] >= '0' and s[-1] <= '9') and s.count('.') <= 1:
             if s.find('.') != -1:
-                return float(s)
+                if float(s) == float('inf') or float == float('-inf'):
+                    raise ValueError('浮点数溢出')
+                else:
+                    return float(s)
             else:
                 return int(s)
         else:
             raise JsonNumberFormatException(s)
 
-    def _parse_list(self, s):  # 传入[...]字符串
-        s = s.strip().strip(',').strip()
+    # 传入[xx, ...]格式的字符串
+    def _parse_list(self, s):
+        s = self._strip_json(s)
         if s[0] == '[' and s[-1] == ']':
             s = s[1:-1]  # 除去[]
             res = []
@@ -122,14 +138,14 @@ class JsonParser:
                     else:
                         break
                 else:
-                    #continue
                     raise JsonFormatException(s)
             return res
         else:
             raise JsonListFormatException(s)
 
-    def _parse_dict(self, s):  # 传入{...}字符串
-        s = s.strip().strip(',').strip()
+    # 传入{xx: xxx, ...}格式的字符串
+    def _parse_dict(self, s):
+        s = self._strip_json(s)
         if s[0] == '{' and s[-1] == '}':
             s = s[1:-1]
             res = {}
@@ -230,9 +246,11 @@ class JsonParser:
         else:
             raise JsonDictFormatException(s)
 
+    # 传入一个字符串
     def _string_to_string(self, s):
         return '"'+s+'"'
 
+    # 传入一个list类型的对象
     def _list_to_string(self, List):
         s = '['
         if List is None:
@@ -256,6 +274,7 @@ class JsonParser:
                 s += ', '
         return s
 
+    # 传入一个dict类型的对象
     def _dict_to_string(self, Dict):
         s = '{'
         count = 0
@@ -304,6 +323,7 @@ class JsonParser:
                 raise IOError("读取Json文件失败")
         except IOError as e:
             logging.error(e.message)
+            raise e
 
     def dump_file(self, f):
         try:
@@ -315,7 +335,9 @@ class JsonParser:
                 raise IOError('写入Json文件失败')
         except IOError as e:
             logging.error(e)
+            raise e
 
+    # 传入一个list类型的对象
     def _deepcopy_list(self, List):
         if type(List) == list:
             res = []
@@ -336,6 +358,7 @@ class JsonParser:
         else:
             raise ValueError("参数错误：请传入list对象")
 
+    # 传入一个dict类型的对象
     def _deepcopy_dict(self, d):
         if type(d) == dict:
             res = {}
@@ -362,12 +385,14 @@ class JsonParser:
             self._data = self._deepcopy_dict(d)
         except ValueError as e:
             logging.error(e)
+            raise e
 
     def dump_dict(self):
         try:
             return self._deepcopy_dict(self._data)
         except ValueError as e:
             logging.error(e.message)
+            raise e
 
     def __getitem__(self, item):
         try:
@@ -377,6 +402,7 @@ class JsonParser:
                 raise KeyError('当前Json对象不存在名为"'+item+'"的键')
         except KeyError as e:
             logging.error(e.message)
+            raise e
 
     def __setitem__(self, key, v):
         try:
@@ -390,21 +416,33 @@ class JsonParser:
                 raise KeyError('设置Json对象的键必须为字符串')
         except (KeyError, ValueError) as e:
             logging.error(e.message)
+            raise e
 
     def update(self, d):
         for key in d.keys():
-            self._data[key] = d[key]
-
+            try:
+                if type(key) == str:
+                    if type(d[key]) == list or type(d[key]) == dict or d[key] is True or d[key] is False \
+                            or d[key] is None or type(d[key]) == int or type(d[key]) == float:
+                        self._data[key] = d[key]
+                    else:
+                        raise ValueError('设置Json对象的值类型无法识别')
+                else:
+                    raise KeyError('设置Json对象的键必须为字符串')
+            except (KeyError, ValueError) as e:
+                logging.error(e.message)
+                raise e
 
 if __name__ == '__main__':
     testD = '{"as":"as", "bs":["bs","bs"], "cs":{"ds":"ds"}}'
     testD = '''
     {
-"name":"Bill Gates",
-"street":"Fifth Avenue New York 666",
-"age":56,
-"phone":"555 1234567"}
-    '''
+        "name":"Bill Gates",
+        "street":"Fifth Avenue New York 666",
+        "age":56,
+        "phone":"555 1234567"
+    }
+        '''
     #print(testD)
     js = JsonParser()
     js.load(testD)
@@ -417,13 +455,13 @@ if __name__ == '__main__':
     testD = '{"a":"a", "b":["b","b"], "c":{"d":"d"}}'
     testD = '''
     {
-"employees": [
-{ "firstName":"John" , "lastName":"Doe" },
-{ "firstName":"Anna" , "lastName":"Smith" },
-{ "firstName":"Peter" , "lastName":"Jones" }
-]
-}
-    '''
+        "employees": [
+            { "firstName":"John" , "lastName":"Doe" },
+            { "firstName":"Anna" , "lastName":"Smith" },
+            { "firstName":"Peter" , "lastName":"Jones" }
+        ]
+    }
+        '''
     js.load(testD)
     #print(js._data)
     print(js.dump())
