@@ -18,21 +18,11 @@
       <file leaf-file-name="jsonparser.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jsonparser/jsonparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="285" column="16" lean-forward="true" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
-              <folding>
-                <element signature="e#46#277#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jsonexcept.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsonparser/jsonexcept.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding />
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <folding>
+                <element signature="e#46#226#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,8 +30,8 @@
       <file leaf-file-name="jsontest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsonparser/jsontest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1973">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="529">
+              <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
               <folding>
                 <element signature="e#47#62#0" expanded="true" />
               </folding>
@@ -64,9 +54,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/jsonparser/testin" />
         <option value="$PROJECT_DIR$/jsonparser/jsonexcept.py" />
-        <option value="$PROJECT_DIR$/jsonparser/jsontest.py" />
         <option value="$PROJECT_DIR$/jsonparser/jsonparser.py" />
+        <option value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       </list>
     </option>
   </component>
@@ -126,8 +117,8 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
-  <component name="RunManager" selected="Python.jsonparser">
-    <configuration default="false" name="Unittest TestJsonParser.test_load_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittest TestJsonParser.test_key_invalid_getitem">
+    <configuration default="false" name="Unittest TestJsonParser.test_IOError" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -139,7 +130,7 @@
       <module name="jsonparser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       <option name="CLASS_NAME" value="TestJsonParser" />
-      <option name="METHOD_NAME" value="test_load_file" />
+      <option name="METHOD_NAME" value="test_IOError" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -149,7 +140,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestJsonParser.test_dump_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestJsonParser.test_IOError_dump_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -161,7 +152,7 @@
       <module name="jsonparser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       <option name="CLASS_NAME" value="TestJsonParser" />
-      <option name="METHOD_NAME" value="test_dump_file" />
+      <option name="METHOD_NAME" value="test_IOError_dump_file" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -171,7 +162,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestJsonParser.test_double_load_file" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestJsonParser.test_parameter_type" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -183,7 +174,7 @@
       <module name="jsonparser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       <option name="CLASS_NAME" value="TestJsonParser" />
-      <option name="METHOD_NAME" value="test_double_load_file" />
+      <option name="METHOD_NAME" value="test_parameter_type" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -193,24 +184,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="jsonparser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jsonparser" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="jsonparser" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsonparser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestJsonParser.test_load_dict" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestJsonParser.test_key_type_setitem" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -222,7 +196,29 @@
       <module name="jsonparser" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
       <option name="CLASS_NAME" value="TestJsonParser" />
-      <option name="METHOD_NAME" value="test_load_dict" />
+      <option name="METHOD_NAME" value="test_key_type_setitem" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestJsonParser.test_key_invalid_getitem" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/jsonparser" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="jsonparser" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonparser/jsontest.py" />
+      <option name="CLASS_NAME" value="TestJsonParser" />
+      <option name="METHOD_NAME" value="test_key_invalid_getitem" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -380,19 +376,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_load_file" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_dump_file" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_double_load_file" />
-      <item index="3" class="java.lang.String" itemvalue="Python.jsonparser" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_load_dict" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_dump_file" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_parameter_type" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_type_setitem" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_invalid_getitem" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.jsonparser" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_load_dict" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_dump_file" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_double_load_file" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_load_file" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_invalid_getitem" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_key_type_setitem" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_parameter_type" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError_dump_file" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestJsonParser.test_IOError" />
       </list>
     </recent_temporary>
   </component>
@@ -400,35 +396,35 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestJsonParser_test_double_load_file - 2017.06.20 at 10h 10m 11s.xml">
-      <configuration name="Unittest TestJsonParser.test_double_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 15h 46m 44s.xml">
+      <configuration name="Unittest TestJsonParser.test_IOError_dump_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_dump_file - 2017.06.20 at 10h 11m 09s.xml">
-      <configuration name="Unittest TestJsonParser.test_dump_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_IOError_dump_file - 2017.06.20 at 15h 47m 18s.xml">
+      <configuration name="Unittest TestJsonParser.test_IOError_dump_file" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_dict - 2017.06.20 at 10h 11m 42s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_dict" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_invalid_getitem - 2017.06.20 at 16h 17m 45s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_invalid_getitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 07m 16s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 08m 23s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 07m 31s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 09m 49s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 08m 30s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 10m 37s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 08m 35s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 10m 47s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 09m 07s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 11m 38s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 09m 29s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_key_type_setitem - 2017.06.20 at 16h 12m 28s.xml">
+      <configuration name="Unittest TestJsonParser.test_key_type_setitem" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestJsonParser_test_load_file - 2017.06.20 at 10h 09m 38s.xml">
-      <configuration name="Unittest TestJsonParser.test_load_file" configurationId="tests" />
+    <history-entry file="Unittest_TestJsonParser_test_parameter_type - 2017.06.20 at 15h 59m 58s.xml">
+      <configuration name="Unittest TestJsonParser.test_parameter_type" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -436,9 +432,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2919192" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34343433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -464,7 +460,7 @@
         <state relative-caret-position="6532">
           <caret line="288" column="103" lean-forward="false" selection-start-line="288" selection-start-column="14" selection-end-line="288" selection-end-column="103" />
           <folding>
-            <element signature="e#46#277#0" expanded="true" />
+            <element signature="e#46#226#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -487,18 +483,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jsonparser/testin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jsonparser/jsonexcept.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="322">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonparser/testout">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsonparser/jsontest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1973">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="529">
+          <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
           <folding>
             <element signature="e#47#62#0" expanded="true" />
           </folding>
@@ -507,10 +519,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jsonparser/jsonparser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="285" column="16" lean-forward="true" selection-start-line="285" selection-start-column="16" selection-end-line="285" selection-end-column="16" />
+        <state relative-caret-position="230">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding>
-            <element signature="e#46#277#0" expanded="true" />
+            <element signature="e#46#226#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,9 @@
+{
+"name":"wangyijun",
+"true":true,
+"false":false,
+"none":none,
+"int":56,
+"float":12.3,
+"list": [1, 2, 3, 4, 5],
+"dict": {"dict1": "hello", "dict2": "world"}}

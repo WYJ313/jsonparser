@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from jsonexcept import JsonStringFormatException, JsonListFormatException, JsonDictFormatException,\
-    JsonNumberFormatException, JsonConstantFormatException, JsonFileLoadException, JsonFileDumpException,\
-    JsonFormatException
+    JsonNumberFormatException, JsonConstantFormatException, JsonFormatException
 
 import logging
 
@@ -41,7 +40,7 @@ class JsonParser:
                     # print(s[:end+1])
                     res.append(self._parse_string(s[:end + 1]))
                     if end + 1 <= len(s) - 1:
-                        s = s[end + 1:]  # 在"后空一位再开始
+                        s = s[end + 1:]  # 从"后开始
                     else:
                         break
                 elif s[0] == '[':
@@ -56,7 +55,7 @@ class JsonParser:
                             break  # i代表]的下标
                     tmp = self._parse_list(s[:i + 1])
                     res.append(tmp)
-                    if i + 1 <= len(s) - 1:  # 在]后空一位再开始
+                    if i + 1 <= len(s) - 1:  # 从]后开始
                         s = s[i + 1:]
                     else:
                         break
@@ -68,9 +67,9 @@ class JsonParser:
                         elif s[i] == '}':
                             flag -= 1
                         elif flag == 0:
-                            break  # i代表]的下标
+                            break               # i代表]的下标
                     res.append(self._parse_dict(s[:i + 1]))
-                    if i + 1 <= len(s) - 1:  # 在]后空一位再开始
+                    if i + 1 <= len(s) - 1:     # 从}开始
                         s = s[i + 1:]
                     else:
                         break
@@ -83,7 +82,7 @@ class JsonParser:
                         else:
                             break
                     else:
-                        raise JsonConstantFormatException
+                        raise JsonConstantFormatException(s)
                 elif s[0] == 'f':
                     if s[:5] == 'false':
                         res.append(False)
@@ -93,7 +92,7 @@ class JsonParser:
                         else:
                             break
                     else:
-                        raise JsonConstantFormatException
+                        raise JsonConstantFormatException(s)
                 elif s[0] == 'n':
                     if s[0:4] == 'none':
                         res.append(None)
@@ -112,7 +111,7 @@ class JsonParser:
                             end += 1
                         elif s[end] == '.':
                             if dotcount > 1:
-                                break
+                                raise JsonNumberFormatException(s)
                             else:
                                 dotcount += 1
                         else:
@@ -127,10 +126,9 @@ class JsonParser:
                     raise JsonFormatException(s)
             return res
         else:
-            print(s)
             raise JsonListFormatException(s)
 
-    def _parse_dict(self, s):  # 传入{...}字符串\
+    def _parse_dict(self, s):  # 传入{...}字符串
         s = s.strip().strip(',').strip()
         if s[0] == '{' and s[-1] == '}':
             s = s[1:-1]
@@ -210,7 +208,7 @@ class JsonParser:
                 elif s[0] == '-' or (s[0] >= '0' and s[0] <= '9'):
                     dotcount = 0
                     end = 1
-                    while(end <= len(s)-1):
+                    while end <= len(s)-1:
                         if s[end] >='0' and s[end] <= '9':
                             end += 1
                         elif s[end] == '.':
@@ -227,7 +225,6 @@ class JsonParser:
                     else:
                         break
                 else:
-                    #continue
                     raise JsonFormatException(s)
             return res
         else:
@@ -291,7 +288,8 @@ class JsonParser:
             self._data = self._parse_dict(s)
         except (JsonFormatException, JsonNumberFormatException, JsonConstantFormatException, JsonDictFormatException,
                 JsonStringFormatException) as e:
-            logging.exception(e.info())
+            logging.exception(e.message)
+            raise e
 
     def dump(self):
         return self._dict_to_string(self._data)
@@ -300,12 +298,12 @@ class JsonParser:
         try:
             try:
                 input = open(f, 'r')
+                self.load(input.read())
+                input.close()
             except IOError:
-                raise JsonFileLoadException
-            self.load(input.read())
-            input.close()
-        except JsonFileLoadException as e:
-            logging.exception(e.info())
+                raise IOError("读取Json文件失败")
+        except IOError as e:
+            logging.error(e.message)
 
     def dump_file(self, f):
         try:
@@ -314,9 +312,9 @@ class JsonParser:
                 output.write(self.dump())
                 output.close()
             except IOError:
-                raise JsonFileDumpException
-        except JsonFileDumpException as e:
-            logging.exception(e.info())
+                raise IOError('写入Json文件失败')
+        except IOError as e:
+            logging.error(e)
 
     def _deepcopy_list(self, List):
         if type(List) == list:
@@ -380,13 +378,12 @@ class JsonParser:
         except KeyError as e:
             logging.error(e.message)
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key, v):
         try:
             if type(key) == str:
-                v = self._data[key]
                 if type(v) == list or type(v) == dict or v is True or v is False or v is None \
                         or type(v) == int or type(v) == float:
-                    self._data[key] = value
+                    self._data[key] = v
                 else:
                     raise ValueError('设置Json对象的值类型无法识别')
             else:
@@ -433,9 +430,9 @@ if __name__ == '__main__':
     #print(js['a'])
     #js['a'] = 'sss'
     #print(js['a'])
-    input = 'D:\\testin'
+    input = './testin'
     js.load_file(input)
-    output = 'D:\\testout'
+    output = './testout'
     js.dump_file(output)
     testT = '{"as": true, "bs": [true, true], "cs": {"ds": true}}'
     js.load(testT)
